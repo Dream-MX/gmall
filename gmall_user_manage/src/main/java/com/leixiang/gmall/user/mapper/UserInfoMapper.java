@@ -11,4 +11,5 @@ import tk.mybatis.mapper.common.Mapper;
  * @Description TODO
  */
 public interface UserInfoMapper extends Mapper<UserInfo> {
+
 }

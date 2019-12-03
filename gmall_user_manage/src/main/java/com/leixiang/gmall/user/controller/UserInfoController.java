@@ -3,10 +3,7 @@ package com.leixiang.gmall.user.controller;
 import com.leixiang.gmall.user.bean.UserInfo;
 import com.leixiang.gmall.user.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,27 +20,27 @@ public class UserInfoController {
     @Autowired
     private UserInfoService userInfoService;
 
-    @GetMapping("/findAll")
+    @RequestMapping("/findAll")
     public List<UserInfo> findAll(){
         return userInfoService.findAll();
     }
 
-    @PostMapping("/addUser")
+    @RequestMapping("/addUser")
     public void addUser(UserInfo userInfo){
         userInfoService.addUser(userInfo);
     }
 
-    @PostMapping("/updateUser")
+    @RequestMapping("/updateUser")
     public void updateUser(UserInfo userInfo){
         userInfoService.updateUser(userInfo);
     }
 
-    @PostMapping("/deleteUser")
+    @RequestMapping("/deleteUser")
     public void deleteUser(UserInfo userInfo){
         userInfoService.deleteUser(userInfo);
     }
 
-    @GetMapping("/getUserByExample")
+    @RequestMapping("/getUserByExample")
     public List<UserInfo> getgetUserByExample(String nickName){
         return userInfoService.getgetUserByExample(nickName);
     }
